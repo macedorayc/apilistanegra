@@ -1,4 +1,4 @@
-import con from './connection.js';
+import connection from './connection.js';
 
 export async function inserirListaNegra(pessoa) {
     const comando = `
@@ -6,7 +6,7 @@ export async function inserirListaNegra(pessoa) {
                             values (?, ?, ?, ?, ?);
     `;
 
-    let resposta = await con.query(comando, [pessoa.nome, pessoa.motivo, pessoa.vinganca, 
+    let resposta = await connection.query(comando, [pessoa.nome, pessoa.motivo, pessoa.vinganca, 
 pessoa.notaOdio, pessoa.perdoado])
 
     let info = resposta[0];
